@@ -40,4 +40,5 @@ input::-webkit-inner-spin-button {
   padding: 0;
   overflow: hidden;
   word-wrap: break-word;
+  padding-left: 10px;
 }
