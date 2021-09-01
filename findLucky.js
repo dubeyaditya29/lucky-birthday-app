@@ -41,11 +41,11 @@ function calculateSum(date) {
 }
 function yourLucky(date, luckyInputNumber) {
   var bdate = calculateSum(date);
-  var luckynumber = luckyInputNumber.value;
+  var luckynumber = Number(luckyInputNumber);
   return bdate % luckynumber;
 }
 function areYourLucky(yourLuckyNumber) {
-  if (yourLuckyNumber === 0) {
+  if (yourLuckyNumber == 0) {
     return true;
   } else {
     return false;
