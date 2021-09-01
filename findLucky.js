@@ -26,6 +26,9 @@ var date = document.querySelector("#date");
 var luckyInputNumber = document.querySelector("#luckyInputNumber");
 var button = document.querySelector("#btn");
 var displayValue = document.querySelector("#displayInput");
+// if (date.value === null || luckyInputNumber.value === null) {
+//   displayValue.value = "Please Enter both the values 🤦‍♂️";
+// }
 function calculateSum(date) {
   var sum = 0;
   for (var i = 0; i < date.length; i++) {
@@ -39,7 +42,7 @@ function calculateSum(date) {
 function yourLucky(date, luckyInputNumber) {
   var bdate = calculateSum(date);
   var luckynumber = luckyInputNumber.value;
-  return bdate % luckyInputNumber;
+  return bdate % luckynumber;
 }
 function areYourLucky(yourLuckyNumber) {
   if (yourLuckyNumber === 0) {
@@ -52,7 +55,11 @@ button.addEventListener("click", function getDate() {
   if (areYourLucky(yourLucky(date.value, luckyInputNumber.value))) {
     displayInput.value = "You'r Lucky!😲";
   } else {
-    displayInput.value = "Oops You'r not lucky!😑";
+    if (date.value && luckyInputNumber.value) {
+      displayInput.value = "Oops You'r not lucky!😑";
+    } else {
+      displayValue.value = "Enter both values🤦‍♂️";
+    }
   }
   //calculateSum(date.value);
 });
