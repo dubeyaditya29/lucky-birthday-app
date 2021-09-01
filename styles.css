@@ -5,7 +5,13 @@
   font-size: 16px;
   font-family: "Inter", sans-serif;
 }
-
+:root {
+  --primary-color: #1f2937;
+  --secondary-color: #6ee7b7;
+}
+body {
+  background-color: var(--primary-color);
+}
 .main-div {
   display: flex;
   justify-content: center;
@@ -17,28 +23,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid black;
+  border: 2px solid var(--secondary-color);
   padding: 50px;
   gap: 2rem;
 }
 .input {
   padding: 10px;
-  text-decoration: none;
+  border-radius: 10px;
+  outline: none;
 }
 .input:focus {
-  border: 2px solid blue !important;
+  border: 3px solid var(--secondary-color) !important;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+#luckyInputNumber {
+  text-align: center;
+}
 #displayInput {
   width: 100%;
   height: 100px;
-  word-wrap: break-word;
-  padding: 0;
-  overflow: hidden;
-  word-wrap: break-word;
-  padding-left: 10px;
+  text-align: center;
+}
+h2,
+label {
+  color: var(--secondary-color);
 }
